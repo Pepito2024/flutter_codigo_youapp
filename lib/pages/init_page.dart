@@ -30,16 +30,53 @@ class _InitPageState extends State<InitPage> {
           height: 26.0,
         ),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.cast, color: Colors.white,),),
-          IconButton(onPressed: (){}, icon: Icon(Icons.notifications_none, color: Colors.white,),),
-          IconButton(onPressed: (){}, icon: Icon(Icons.search, color: Colors.white,),),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.cast,
+              color: Colors.white,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Icon(
+                  Icons.notifications_none,
+                  color: Colors.white,
+                ),
+                Positioned(
+                  top: -2,
+                  right: -4,
+                  child: Container(
+                    padding: EdgeInsets.all(2.4),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.red
+                    ),
+                    child: Text("9+", style: TextStyle(fontSize:11.0 ),),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+          ),
           const SizedBox(
             width: 6.0,
           ),
           const CircleAvatar(
             backgroundColor: Colors.white12,
             radius: 14.0,
-            backgroundImage: NetworkImage("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",),
+            backgroundImage: NetworkImage(
+              "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",
+            ),
           ),
           const SizedBox(
             width: 6.0,
