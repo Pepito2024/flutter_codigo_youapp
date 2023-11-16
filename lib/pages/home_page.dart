@@ -12,10 +12,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     
-     _apiService.getVideos();
-
-     return SingleChildScrollView(
+    /// _apiService.getVideos();
+    
+    return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: 14,
