@@ -82,10 +82,12 @@ class _HomePageState extends State<HomePage> {
            
             ListView.builder(
               shrinkWrap: true,
-              physics: videos.length,
+              physics: ScrollPhysics(),
               itemCount: videos.length,
               itemBuilder: (BuildContext context, int index) {
-                return ItemVideoWidget();
+                return ItemVideoWidget(
+                  videoModel: videos[index],
+                );
               }, 
             ),
           ],
