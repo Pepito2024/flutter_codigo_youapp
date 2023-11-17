@@ -79,11 +79,15 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 10.0,
             ),
-            ItemVideoWidget(),
-            ItemVideoWidget(),
-            ItemVideoWidget(),
-            ItemVideoWidget(),
-            ItemVideoWidget(),
+           
+            ListView.builder(
+              shrinkWrap: true,
+              physics: videos.length,
+              itemCount: videos.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ItemVideoWidget();
+              }, 
+            ),
           ],
         ),
       ),
