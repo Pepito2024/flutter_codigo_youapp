@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo_youapp/models/video_model.dart';
 import 'package:flutter_codigo_youapp/services/api_service.dart';
 import 'package:flutter_codigo_youapp/ui/general/colors.dart';
 import 'package:flutter_codigo_youapp/ui/widgets/item_filter_widget.dart';
 import 'package:flutter_codigo_youapp/ui/widgets/item_video_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final _apiService =APIService();
+  List<VideoModel> videos = [];
   
-  //const HomePage({Key? key}) : super(key: key);
+  @override
+  initState(){
+    super.initState();
+    getData();
+  }
 
+  getData(){
+    _apiService.getVideos().then((value){
+      videos = value;
+      setState((){});
+    });
+  }
+
+  //const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     /// _apiService.getVideos();

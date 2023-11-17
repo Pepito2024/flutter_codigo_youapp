@@ -1,12 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter_codigo_youapp/models/video_model.dart';
+import 'package:flutter_codigo_youapp/utils/constants.dart';
 import 'package:http/http.dart' as http;
 
 class APIService{
   Future<List<VideoModel>> getVideos()async{
     List<VideoModel> videosModel = [];
-    String _path = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCL0qPSwxPY9WE59Qwr7c6gxuTcFCLi_co&maxResults=20&regionCode=PE";
+    String _path = "$pathProduction/search?part=snippet&key=$apiKey&maxResults=20&regionCode=PE";
     Uri _uri = Uri.parse(_path);
 
 
