@@ -10,14 +10,20 @@ class ItemVideoWidget extends StatelessWidget {
     required this.videoModel,
   });
 
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
 
     return GestureDetector(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => VideoDetailPage(),),);
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => VideoDetailPage(
+              videoId: videoModel.id.videoId,
+            ),
+          ),
+        );
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 10.0),
@@ -35,7 +41,8 @@ class ItemVideoWidget extends StatelessWidget {
                   bottom: 0,
                   right: 0,
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 2.0),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 5.0, vertical: 2.0),
                     margin:
                         EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                     color: Colors.black.withOpacity(0.7),
