@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo_youapp/pages/home_page.dart';
+import 'package:flutter_codigo_youapp/pages/videos_page.dart';
 import 'package:flutter_codigo_youapp/ui/general/colors.dart';
+
 
 class ChannelPage extends StatefulWidget {
   @override
@@ -93,6 +96,8 @@ class _ChannelPageState extends State<ChannelPage>
       body: TabBarView(
         controller: _tabController,
         children: [
+          HomePage(),
+          VideosPage(),
           Center(
             child: Text(
               "Pagina 1",
