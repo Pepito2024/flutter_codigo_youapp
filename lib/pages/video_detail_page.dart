@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo_youapp/pages/channel_page.dart';
 import 'package:flutter_codigo_youapp/ui/general/colors.dart';
 import 'package:flutter_codigo_youapp/ui/widgets/item_video_detail_widget.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -122,6 +123,14 @@ class _VideoDetailPage extends State<VideoDetailPage> {
                   color: Colors.white24,
                 ),
                 ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ChannelPage(),
+                      ),
+                    );
+                  },
                   leading: CircleAvatar(
                     backgroundColor: Colors.white24,
                     backgroundImage: NetworkImage(
@@ -130,6 +139,13 @@ class _VideoDetailPage extends State<VideoDetailPage> {
                   ),
                   title: Text(
                     "lorem ipsum dolor sit amet",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 12.0,
+                    ),
+                  ),
+                  subtitle: Text(
+                    "1.4 M de suscriptores",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 12.0,
